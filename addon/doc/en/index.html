@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG Analyst - User Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #1a1a2e;
+        }
+
+        h1 {
+            border-bottom: 3px solid #4a90d9;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+
+        kbd {
+            background: #333;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .shortcut {
+            background: #4a90d9;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .note {
+            background: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+        }
+
+        .toc {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 5px;
+        }
+
+        .toc a {
+            color: #4a90d9;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .developer-info {
+            background: #f0f8ff;
+            border: 1px solid #4a90d9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .developer-info h2 {
+            margin-top: 0;
+            color: #4a90d9;
+            border-bottom: none;
+        }
+
+        .developer-info a {
+            color: #4a90d9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WCAG Analyst - User Guide</h1>
+
+    <p>WCAG Analyst is an advanced NVDA add-on that analyzes web page elements and HTML content for WCAG accessibility
+        compliance using Ollama AI models. It provides detailed reports with improvement suggestions in English and
+        Turkish.</p>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#requirements">1. Requirements</a></li>
+            <li><a href="#installation">2. Installation</a></li>
+            <li><a href="#features">3. Features</a></li>
+            <li><a href="#quick-start">4. Quick Start</a></li>
+            <li><a href="#menu-items">5. Menu Items</a></li>
+            <li><a href="#html-analyst">6. HTML Analyst Interface</a></li>
+            <li><a href="#configuration">7. Configuration</a></li>
+            <li><a href="#keyboard-shortcuts">8. Keyboard Shortcuts</a></li>
+            <li><a href="#result-window">9. Result Window</a></li>
+            <li><a href="#troubleshooting">10. Troubleshooting</a></li>
+            <li><a href="#developer">11. Developer Information</a></li>
+            <li><a href="#license">12. License</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="requirements">1. Requirements</h2>
+    <ul>
+        <li>NVDA 2023.1 or later</li>
+        <li><a href="https://ollama.ai">Ollama</a> installed and running on your system</li>
+        <li>At least one Ollama model downloaded (e.g., <code>llama3.2</code>, <code>mistral</code>)</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> To download an Ollama model, open a command prompt and run:<br>
+        <code>ollama pull llama3.2</code>
+    </div>
+
+    <h2 id="installation">2. Installation</h2>
+    <ol>
+        <li>Download the WCAG Analyst add-on file (.nvda-addon)</li>
+        <li>Double-click the file to install it in NVDA</li>
+        <li>Restart NVDA</li>
+        <li>Make sure Ollama is running on your computer</li>
+    </ol>
+
+    <h2 id="features">3. Features</h2>
+    <ul>
+        <li><strong>HTML Analyst Interface:</strong> Two-panel interface to input HTML and view analysis results</li>
+        <li><strong>Element Analysis:</strong> Analyze the focused web element with a single shortcut</li>
+        <li><strong>Ask More:</strong> Ask follow-up questions about the analysis results</li>
+        <li><strong>WCAG 2.0/2.1/2.2 Support:</strong> Analysis based on different WCAG versions</li>
+        <li><strong>A/AA/AAA Levels:</strong> Conformance level selection</li>
+        <li><strong>Multi-language:</strong> Turkish and English support</li>
+    </ul>
+
+    <h2 id="quick-start">4. Quick Start</h2>
+    <ol>
+        <li>Install the WCAG Analyst add-on in NVDA</li>
+        <li>Make sure Ollama is running on your computer</li>
+        <li>Navigate to any web page element</li>
+        <li>Press the keyboard shortcut to analyze:</li>
+    </ol>
+
+    <p class="shortcut">NVDA + Shift + W</p>
+
+    <p>Or use "WCAG HTML Analyst" from the NVDA Tools menu.</p>
+
+    <h2 id="menu-items">5. Menu Items</h2>
+    <p>The following items are available in the NVDA Tools menu:</p>
+    <table>
+        <tr>
+            <th>Menu Item</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>WCAG HTML Analyst</td>
+            <td>Opens the two-panel HTML analysis interface</td>
+        </tr>
+        <tr>
+            <td>WCAG Element Analysis</td>
+            <td>Analyzes the focused element (same as NVDA+Shift+W)</td>
+        </tr>
+        <tr>
+            <td>WCAG Analyst Settings</td>
+            <td>Opens the add-on settings panel</td>
+        </tr>
+        <tr>
+            <td>WCAG Analyst Documentation</td>
+            <td>Opens this documentation page</td>
+        </tr>
+    </table>
+
+    <h2 id="html-analyst">6. HTML Analyst Interface</h2>
+    <p>HTML Analyst provides a modern two-panel interface:</p>
+
+    <h3>Left Panel - HTML Content</h3>
+    <ul>
+        <li>Paste the HTML code to be analyzed here</li>
+        <li>Click "Analyze" button to start the analysis</li>
+    </ul>
+
+    <h3>Right Panel - Improvements and Suggestions</h3>
+    <ul>
+        <li>Read-only area - displays analysis results</li>
+        <li>WCAG compliance issues and recommendations</li>
+        <li>Corrected code examples</li>
+    </ul>
+
+    <h3>Ask More</h3>
+    <ul>
+        <li>Ask follow-up questions about the analysis results</li>
+        <li>When a question is asked, the response replaces the previous content</li>
+        <li>Conversation history is preserved, allowing contextual questions</li>
+    </ul>
+
+    <h2 id="configuration">7. Configuration</h2>
+    <p>Access settings: <strong>NVDA Menu → Preferences → Settings → WCAG Reporter</strong> or "WCAG Analyst Settings"
+        from the Tools menu</p>
+
+    <h3>Ollama Server Settings</h3>
+    <table>
+        <tr>
+            <th>Setting</th>
+            <th>Description</th>
+            <th>Default</th>
+        </tr>
+        <tr>
+            <td>Server URL</td>
+            <td>Ollama server address</td>
+            <td>http://localhost:11434</td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>AI model to use for analysis</td>
+            <td>llama3.2</td>
+        </tr>
+    </table>
+
+    <h3>WCAG Analysis Settings</h3>
+    <table>
+        <tr>
+            <th>Setting</th>
+            <th>Description</th>
+            <th>Default</th>
+        </tr>
+        <tr>
+            <td>WCAG Version</td>
+            <td>Which WCAG version to check against</td>
+            <td>2.2</td>
+        </tr>
+        <tr>
+            <td>Conformance Level</td>
+            <td>A, AA, or AAA</td>
+            <td>AA</td>
+        </tr>
+        <tr>
+            <td>Language</td>
+            <td>Analysis result language</td>
+            <td>Turkish</td>
+        </tr>
+        <tr>
+            <td>Timeout</td>
+            <td>Maximum wait time for AI response</td>
+            <td>120 seconds</td>
+        </tr>
+    </table>
+
+    <h2 id="keyboard-shortcuts">8. Keyboard Shortcuts</h2>
+    <table>
+        <tr>
+            <th>Shortcut</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td><kbd>NVDA</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd></td>
+            <td>Analyze the focused element</td>
+        </tr>
+    </table>
+
+    <h2 id="result-window">9. Result Window</h2>
+    <p>The analysis result window is fully accessible with screen readers:</p>
+    <ul>
+        <li><strong>Tab</strong> - Navigate between sections and buttons</li>
+        <li><strong>Copy</strong> - Copy analysis result to clipboard</li>
+        <li><strong>Ask</strong> - Ask a follow-up question</li>
+        <li><strong>Escape</strong> or <strong>Close</strong> - Close the window</li>
+    </ul>
+
+    <h2 id="troubleshooting">10. Troubleshooting</h2>
+
+    <h3>Connection Error</h3>
+    <div class="warning">
+        <strong>If you see "Connection failed":</strong>
+        <ol>
+            <li>Make sure Ollama is running: Open command prompt and type <code>ollama serve</code></li>
+            <li>Check the server URL in settings (default: http://localhost:11434)</li>
+            <li>Use the Refresh Models button to update the model list</li>
+        </ol>
+    </div>
+
+    <h3>No Models</h3>
+    <p>If the model list is empty:</p>
+    <ol>
+        <li>Open command prompt</li>
+        <li>Run: <code>ollama pull llama3.2</code></li>
+        <li>Click "Refresh Models" button in settings</li>
+    </ol>
+
+    <h3>Analysis Takes Too Long</h3>
+    <p>Large or complex elements may take longer. Try:</p>
+    <ul>
+        <li>Use a faster model (e.g., <code>llama3.2:1b</code>)</li>
+        <li>Increase the timeout in settings</li>
+        <li>Analyze simpler elements first</li>
+    </ul>
+
+    <!-- Developer Information -->
+    <div class="developer-info" id="developer">
+        <h2>11. Developer Information</h2>
+        <p>
+            <strong>Developer:</strong> Sarper Arıkan<br>
+            <strong>Website:</strong> <a href="https://sarperarikan.net"
+                target="_blank">https://sarperarikan.net</a><br>
+            <strong>Email:</strong> <a href="mailto:sarperarikan@gmail.com">sarperarikan@gmail.com</a><br>
+            <strong>Version:</strong> 1.0.0
+        </p>
+    </div>
+
+    <h2 id="license">12. License</h2>
+    <p>This add-on is free and open source software. You can redistribute it and/or modify it under the terms of the GNU
+        General Public License as published by the Free Software Foundation.</p>
+</body>
+
+</html>

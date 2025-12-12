@@ -1,0 +1,259 @@
+# WCAG Analyst Add-on for NVDA - English Translation
+# Copyright (C) 2024 Sarper Arikan
+# This file is distributed under the same license as the WCAG Analyst package.
+# Sarper Arıkan <sarperarikan@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WCAGAnalyst 1.0.0\n"
+"Report-Msgid-Bugs-To: sarperarikan@gmail.com\n"
+"POT-Creation-Date: 2024-12-12 12:00+0300\n"
+"PO-Revision-Date: 2024-12-12 12:00+0300\n"
+"Last-Translator: Sarper Arıkan <sarperarikan@gmail.com>\n"
+"Language-Team: English <sarperarikan@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Connection and API errors
+msgid "Connection error (attempt {attempt}/{max}): {error}"
+msgstr "Connection error (attempt {attempt}/{max}): {error}"
+
+msgid "API error: {error}"
+msgstr "API error: {error}"
+
+msgid "Unknown error"
+msgstr "Unknown error"
+
+# Markdown converter
+msgid "--- Code Start ---"
+msgstr "--- Code Start ---"
+
+msgid "--- Code End ---"
+msgstr "--- Code End ---"
+
+# Result Dialog
+msgid "WCAG Reporter - Analysis Result"
+msgstr "WCAG Reporter - Analysis Result"
+
+msgid "Ask more questions..."
+msgstr "Ask more questions..."
+
+msgid "Ask follow-up question..."
+msgstr "Ask follow-up question..."
+
+msgid "&Ask"
+msgstr "&Ask"
+
+msgid "&Copy"
+msgstr "&Copy"
+
+msgid "C&lose"
+msgstr "C&lose"
+
+msgid "Copied to clipboard"
+msgstr "Copied to clipboard"
+
+msgid "Waiting for response..."
+msgstr "Waiting for response..."
+
+msgid "--- Question: {question} ---"
+msgstr "--- Question: {question} ---"
+
+msgid "Response ready"
+msgstr "Response ready"
+
+msgid "Error: {error}"
+msgstr "Error: {error}"
+
+# Analyst Dialog
+msgid "WCAG Analyst - HTML Analysis"
+msgstr "WCAG Analyst - HTML Analysis"
+
+msgid "&HTML Content:"
+msgstr "&HTML Content:"
+
+msgid "Paste the HTML content to analyze here..."
+msgstr "Paste the HTML content to analyze here..."
+
+msgid "&Analyze"
+msgstr "&Analyze"
+
+msgid "I&mprovements and Suggestions:"
+msgstr "I&mprovements and Suggestions:"
+
+msgid "Enter HTML content and click 'Analyze' button."
+msgstr "Enter HTML content and click 'Analyze' button."
+
+msgid "Ask &More:"
+msgstr "Ask &More Questions:"
+
+msgid "Ask additional questions about WCAG..."
+msgstr "Ask additional questions about WCAG..."
+
+msgid "Ask follow-up question about WCAG..."
+msgstr "Ask follow-up question about WCAG..."
+
+msgid "Cl&ose"
+msgstr "Cl&ose"
+
+msgid "Please enter HTML content first."
+msgstr "Please enter HTML content first."
+
+msgid "Analysis in progress, please wait."
+msgstr "Analysis in progress, please wait."
+
+msgid "Analyzing, please wait..."
+msgstr "Analyzing, please wait..."
+
+msgid "Starting WCAG analysis..."
+msgstr "Starting WCAG analysis..."
+
+msgid "HTML entered by user"
+msgstr "HTML entered by user"
+
+msgid "Analysis complete."
+msgstr "Analysis complete."
+
+msgid "Please enter a question."
+msgstr "Please enter a question."
+
+msgid "You must analyze first."
+msgstr "You must analyze first."
+
+msgid "Operation in progress, please wait."
+msgstr "Operation in progress, please wait."
+
+msgid "Sending question..."
+msgstr "Sending question..."
+
+msgid "Response ready."
+msgstr "Response ready."
+
+# Settings Panel
+msgid "WCAG Reporter"
+msgstr "WCAG Reporter"
+
+msgid "Ollama &URL:"
+msgstr "Ollama &URL:"
+
+msgid "&Model:"
+msgstr "&Model:"
+
+msgid "&Refresh Models"
+msgstr "&Refresh Models"
+
+msgid "WCAG &Version:"
+msgstr "WCAG &Version:"
+
+msgid "&Level:"
+msgstr "&Level:"
+
+msgid "Turkish"
+msgstr "Turkish"
+
+msgid "English"
+msgstr "English"
+
+msgid "&Language:"
+msgstr "&Language:"
+
+msgid "&Timeout (sec):"
+msgstr "&Timeout (sec):"
+
+msgid "(No model found)"
+msgstr "(No model found)"
+
+msgid "Model list refreshed."
+msgstr "Model list refreshed."
+
+# Menu Items - Submenu structure
+msgid "WCAG Analyst"
+msgstr "WCAG Analyst"
+
+msgid "&HTML Analyst"
+msgstr "&HTML Analyst"
+
+msgid "Analyze HTML content for WCAG"
+msgstr "Analyze HTML content for WCAG"
+
+msgid "&Element Analysis (NVDA+Shift+W)"
+msgstr "&Element Analysis (NVDA+Shift+W)"
+
+msgid "Analyze focused element for WCAG"
+msgstr "Analyze focused element for WCAG"
+
+msgid "&Settings"
+msgstr "&Settings"
+
+msgid "Open WCAG Analyst settings"
+msgstr "Open WCAG Analyst settings"
+
+msgid "&Documentation"
+msgstr "&Documentation"
+
+msgid "View documentation"
+msgstr "View documentation"
+
+msgid "Documentation file not found."
+msgstr "Documentation file not found."
+
+msgid "Error opening documentation: {error}"
+msgstr "Error opening documentation: {error}"
+
+# Analysis Messages
+msgid "No element is currently focused."
+msgstr "No element is currently focused."
+
+msgid "Could not extract element information."
+msgstr "Could not extract element information."
+
+msgid "Starting WCAG analysis... 0 percent"
+msgstr "Starting WCAG analysis... 0 percent"
+
+msgid "Extracting element info... 10 percent"
+msgstr "Extracting element info... 10 percent"
+
+msgid "Connecting to Ollama server... 30 percent"
+msgstr "Connecting to Ollama server... 30 percent"
+
+msgid "Processing response... 90 percent"
+msgstr "Processing response... 90 percent"
+
+# HTML Extraction
+msgid "<!-- Element Info -->"
+msgstr "<!-- Element Info -->"
+
+msgid "<!-- Role: {role} -->"
+msgstr "<!-- Role: {role} -->"
+
+msgid "<!-- States: {states} -->"
+msgstr "<!-- States: {states} -->"
+
+msgid "<!-- Child element count: {count} -->"
+msgstr "<!-- Child element count: {count} -->"
+
+msgid "<element>Unknown element</element>"
+msgstr "<element>Unknown element</element>"
+
+# Context
+msgid "Role: {role}"
+msgstr "Role: {role}"
+
+msgid "Web page (Browse Mode)"
+msgstr "Web page (Browse Mode)"
+
+msgid "Parent element: {name}"
+msgstr "Parent element: {name}"
+
+msgid "Unknown"
+msgstr "Unknown"
+
+# Error Dialog
+msgid "WCAG Reporter Error"
+msgstr "WCAG Reporter Error"
+
+msgid "An error occurred during analysis:\n\n{error}"
+msgstr "An error occurred during analysis:\n\n{error}"

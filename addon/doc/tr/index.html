@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG Analyst - Kullanım Kılavuzu</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #1a1a2e;
+        }
+
+        h1 {
+            border-bottom: 3px solid #4a90d9;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+
+        kbd {
+            background: #333;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .shortcut {
+            background: #4a90d9;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .note {
+            background: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+        }
+
+        .toc {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 5px;
+        }
+
+        .toc a {
+            color: #4a90d9;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .developer-info {
+            background: #f0f8ff;
+            border: 1px solid #4a90d9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .developer-info h2 {
+            margin-top: 0;
+            color: #4a90d9;
+            border-bottom: none;
+        }
+
+        .developer-info a {
+            color: #4a90d9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WCAG Analyst - Kullanım Kılavuzu</h1>
+
+    <p>WCAG Analyst, Ollama AI modellerini kullanarak web sayfası elementlerini ve HTML içeriklerini WCAG
+        erişilebilirlik uyumluluğu açısından analiz eden gelişmiş bir NVDA eklentisidir. Türkçe ve İngilizce dillerinde
+        iyileştirme önerileri içeren detaylı raporlar sunar.</p>
+
+    <!-- İçindekiler Tablosu -->
+    <nav class="toc">
+        <h2>İçindekiler</h2>
+        <ul>
+            <li><a href="#gereksinimler">1. Gereksinimler</a></li>
+            <li><a href="#kurulum">2. Kurulum</a></li>
+            <li><a href="#ozellikler">3. Özellikler</a></li>
+            <li><a href="#hizli-baslangic">4. Hızlı Başlangıç</a></li>
+            <li><a href="#menu-ogeleri">5. Menü Öğeleri</a></li>
+            <li><a href="#html-analyst">6. HTML Analyst Arayüzü</a></li>
+            <li><a href="#yapilandirma">7. Yapılandırma</a></li>
+            <li><a href="#klavye-kisayollari">8. Klavye Kısayolları</a></li>
+            <li><a href="#sonuc-penceresi">9. Sonuç Penceresi</a></li>
+            <li><a href="#sorun-giderme">10. Sorun Giderme</a></li>
+            <li><a href="#gelistirici">11. Geliştirici Bilgileri</a></li>
+            <li><a href="#lisans">12. Lisans</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="gereksinimler">1. Gereksinimler</h2>
+    <ul>
+        <li>NVDA 2023.1 veya üstü</li>
+        <li>Sisteminizde kurulu ve çalışır durumda <a href="https://ollama.ai">Ollama</a></li>
+        <li>En az bir Ollama modeli indirilmiş olmalı (örn: <code>llama3.2</code>, <code>mistral</code>)</li>
+    </ul>
+
+    <div class="note">
+        <strong>Not:</strong> Ollama modeli yüklemek için komut istemcisini açın ve şu komutu çalıştırın:<br>
+        <code>ollama pull llama3.2</code>
+    </div>
+
+    <h2 id="kurulum">2. Kurulum</h2>
+    <ol>
+        <li>WCAG Analyst eklenti dosyasını (.nvda-addon) indirin</li>
+        <li>Dosyayı çift tıklayarak NVDA'ya yükleyin</li>
+        <li>NVDA'yı yeniden başlatın</li>
+        <li>Ollama'nın bilgisayarınızda çalıştığından emin olun</li>
+    </ol>
+
+    <h2 id="ozellikler">3. Özellikler</h2>
+    <ul>
+        <li><strong>HTML Analyst Arayüzü:</strong> İki panelli arayüz ile HTML içeriği girip analiz sonuçlarını görün
+        </li>
+        <li><strong>Element Analizi:</strong> Odaktaki web elementini tek kısayolla analiz edin</li>
+        <li><strong>Daha Sor:</strong> Analiz sonuçları hakkında takip soruları sorun</li>
+        <li><strong>WCAG 2.0/2.1/2.2 Desteği:</strong> Farklı WCAG sürümlerine göre analiz</li>
+        <li><strong>A/AA/AAA Seviyeleri:</strong> Uyumluluk seviyesi seçimi</li>
+        <li><strong>Çoklu Dil:</strong> Türkçe ve İngilizce destek</li>
+    </ul>
+
+    <h2 id="hizli-baslangic">4. Hızlı Başlangıç</h2>
+    <ol>
+        <li>WCAG Analyst eklentisini NVDA'ya yükleyin</li>
+        <li>Ollama'nın bilgisayarınızda çalıştığından emin olun</li>
+        <li>Herhangi bir web sayfası elementine gidin</li>
+        <li>Analiz için klavye kısayoluna basın:</li>
+    </ol>
+
+    <p class="shortcut">NVDA + Shift + W</p>
+
+    <p>Veya NVDA Araçlar menüsünden "WCAG HTML Analyst" seçeneğini kullanın.</p>
+
+    <h2 id="menu-ogeleri">5. Menü Öğeleri</h2>
+    <p>NVDA Araçlar menüsünde aşağıdaki öğeler bulunur:</p>
+    <table>
+        <tr>
+            <th>Menü Öğesi</th>
+            <th>Açıklama</th>
+        </tr>
+        <tr>
+            <td>WCAG HTML Analyst</td>
+            <td>İki panelli HTML analiz arayüzünü açar</td>
+        </tr>
+        <tr>
+            <td>WCAG Element Analizi</td>
+            <td>Odaktaki elementi analiz eder (NVDA+Shift+W ile aynı)</td>
+        </tr>
+        <tr>
+            <td>WCAG Analyst Ayarları</td>
+            <td>Eklenti ayarlar panelini açar</td>
+        </tr>
+        <tr>
+            <td>WCAG Analyst Dokümantasyon</td>
+            <td>Bu dokümantasyon sayfasını açar</td>
+        </tr>
+    </table>
+
+    <h2 id="html-analyst">6. HTML Analyst Arayüzü</h2>
+    <p>HTML Analyst, iki panelli modern bir arayüz sunar:</p>
+
+    <h3>Sol Panel - HTML İçeriği</h3>
+    <ul>
+        <li>Analiz edilecek HTML kodunu buraya yapıştırın</li>
+        <li>"Analiz Et" butonuna tıklayarak analizi başlatın</li>
+    </ul>
+
+    <h3>Sağ Panel - İyileştirmeler ve Öneriler</h3>
+    <ul>
+        <li>Salt okunur alan - analiz sonuçlarını gösterir</li>
+        <li>WCAG uyumluluk sorunları ve önerileri</li>
+        <li>Düzeltilmiş kod örnekleri</li>
+    </ul>
+
+    <h3>Daha Sor</h3>
+    <ul>
+        <li>Analiz sonuçları hakkında takip soruları sorun</li>
+        <li>Soru sorulduğunda yanıt, önceki içeriğin yerine gösterilir</li>
+        <li>Konuşma geçmişi korunur, böylece bağlamsal sorular sorabilirsiniz</li>
+    </ul>
+
+    <h2 id="yapilandirma">7. Yapılandırma</h2>
+    <p>Ayarlara erişim: <strong>NVDA Menüsü → Tercihler → Ayarlar → WCAG Reporter</strong> veya Araçlar menüsünden "WCAG
+        Analyst Ayarları"</p>
+
+    <h3>Ollama Sunucu Ayarları</h3>
+    <table>
+        <tr>
+            <th>Ayar</th>
+            <th>Açıklama</th>
+            <th>Varsayılan</th>
+        </tr>
+        <tr>
+            <td>Sunucu URL</td>
+            <td>Ollama sunucu adresi</td>
+            <td>http://localhost:11434</td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>Analiz için kullanılacak AI modeli</td>
+            <td>llama3.2</td>
+        </tr>
+    </table>
+
+    <h3>WCAG Analiz Ayarları</h3>
+    <table>
+        <tr>
+            <th>Ayar</th>
+            <th>Açıklama</th>
+            <th>Varsayılan</th>
+        </tr>
+        <tr>
+            <td>WCAG Sürümü</td>
+            <td>Hangi WCAG sürümüne göre kontrol edilecek</td>
+            <td>2.2</td>
+        </tr>
+        <tr>
+            <td>Uyumluluk Seviyesi</td>
+            <td>A, AA veya AAA</td>
+            <td>AA</td>
+        </tr>
+        <tr>
+            <td>Dil</td>
+            <td>Analiz sonuç dili</td>
+            <td>Türkçe</td>
+        </tr>
+        <tr>
+            <td>Zaman Aşımı</td>
+            <td>AI yanıtı için maksimum bekleme süresi</td>
+            <td>120 saniye</td>
+        </tr>
+    </table>
+
+    <h2 id="klavye-kisayollari">8. Klavye Kısayolları</h2>
+    <table>
+        <tr>
+            <th>Kısayol</th>
+            <th>Eylem</th>
+        </tr>
+        <tr>
+            <td><kbd>NVDA</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd></td>
+            <td>Odaklanılan elementi analiz et</td>
+        </tr>
+    </table>
+
+    <h2 id="sonuc-penceresi">9. Sonuç Penceresi</h2>
+    <p>Analiz sonucu penceresi ekran okuyucularla tamamen erişilebilirdir:</p>
+    <ul>
+        <li><strong>Tab</strong> - Bölümler ve butonlar arasında gezin</li>
+        <li><strong>Kopyala</strong> - Analiz sonucunu panoya kopyala</li>
+        <li><strong>Sor</strong> - Takip sorusu sorun</li>
+        <li><strong>Escape</strong> veya <strong>Kapat</strong> - Pencereyi kapat</li>
+    </ul>
+
+    <h2 id="sorun-giderme">10. Sorun Giderme</h2>
+
+    <h3>Bağlantı Hatası</h3>
+    <div class="warning">
+        <strong>"Bağlantı başarısız" görüyorsanız:</strong>
+        <ol>
+            <li>Ollama'nın çalıştığından emin olun: Komut istemcisini açın ve <code>ollama serve</code> yazın</li>
+            <li>Ayarlardaki sunucu URL'sini kontrol edin (varsayılan: http://localhost:11434)</li>
+            <li>Modelleri Yenile butonunu kullanarak model listesini güncelleyin</li>
+        </ol>
+    </div>
+
+    <h3>Model Yok</h3>
+    <p>Model listesi boşsa:</p>
+    <ol>
+        <li>Komut istemcisini açın</li>
+        <li>Çalıştırın: <code>ollama pull llama3.2</code></li>
+        <li>Ayarlarda "Modelleri Yenile" butonuna tıklayın</li>
+    </ol>
+
+    <h3>Analiz Çok Uzun Sürüyor</h3>
+    <p>Büyük veya karmaşık elementler daha uzun sürebilir. Şunları deneyin:</p>
+    <ul>
+        <li>Daha hızlı bir model kullanın (örn: <code>llama3.2:1b</code>)</li>
+        <li>Ayarlarda zaman aşımını artırın</li>
+        <li>Önce daha basit elementleri analiz edin</li>
+    </ul>
+
+    <!-- Geliştirici Bilgileri -->
+    <div class="developer-info" id="gelistirici">
+        <h2>11. Geliştirici Bilgileri</h2>
+        <p>
+            <strong>Geliştiren:</strong> Sarper Arıkan<br>
+            <strong>Web Sitesi:</strong> <a href="https://sarperarikan.net"
+                target="_blank">https://sarperarikan.net</a><br>
+            <strong>E-posta:</strong> <a href="mailto:sarperarikan@gmail.com">sarperarikan@gmail.com</a><br>
+            <strong>Sürüm:</strong> 1.0.0
+        </p>
+    </div>
+
+    <h2 id="lisans">12. Lisans</h2>
+    <p>Bu eklenti özgür ve açık kaynak yazılımdır. Free Software Foundation tarafından yayınlanan GNU Genel Kamu Lisansı
+        koşulları altında yeniden dağıtabilir ve/veya değiştirebilirsiniz.</p>
+</body>
+
+</html>
+</code>

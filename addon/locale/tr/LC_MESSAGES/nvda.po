@@ -1,0 +1,259 @@
+# WCAG Analyst Add-on for NVDA - Turkish Translation
+# Copyright (C) 2024 Sarper Arikan
+# This file is distributed under the same license as the WCAG Analyst package.
+# Sarper Arıkan <sarperarikan@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WCAGAnalyst 1.0.0\n"
+"Report-Msgid-Bugs-To: sarperarikan@gmail.com\n"
+"POT-Creation-Date: 2024-12-12 12:00+0300\n"
+"PO-Revision-Date: 2024-12-12 12:00+0300\n"
+"Last-Translator: Sarper Arıkan <sarperarikan@gmail.com>\n"
+"Language-Team: Turkish <sarperarikan@gmail.com>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Connection and API errors
+msgid "Connection error (attempt {attempt}/{max}): {error}"
+msgstr "Bağlantı hatası (deneme {attempt}/{max}): {error}"
+
+msgid "API error: {error}"
+msgstr "API hatası: {error}"
+
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+# Markdown converter
+msgid "--- Code Start ---"
+msgstr "--- Kod Başlangıcı ---"
+
+msgid "--- Code End ---"
+msgstr "--- Kod Bitişi ---"
+
+# Result Dialog
+msgid "WCAG Reporter - Analysis Result"
+msgstr "WCAG Reporter - Analiz Sonucu"
+
+msgid "Ask more questions..."
+msgstr "Daha fazla soru sor..."
+
+msgid "Ask follow-up question..."
+msgstr "Takip sorusu sor..."
+
+msgid "&Ask"
+msgstr "&Sor"
+
+msgid "&Copy"
+msgstr "&Kopyala"
+
+msgid "C&lose"
+msgstr "&Kapat"
+
+msgid "Copied to clipboard"
+msgstr "Panoya kopyalandı"
+
+msgid "Waiting for response..."
+msgstr "Yanıt bekleniyor..."
+
+msgid "--- Question: {question} ---"
+msgstr "--- Soru: {question} ---"
+
+msgid "Response ready"
+msgstr "Yanıt hazır"
+
+msgid "Error: {error}"
+msgstr "Hata: {error}"
+
+# Analyst Dialog
+msgid "WCAG Analyst - HTML Analysis"
+msgstr "WCAG Analyst - HTML Analizi"
+
+msgid "&HTML Content:"
+msgstr "&HTML İçeriği:"
+
+msgid "Paste the HTML content to analyze here..."
+msgstr "Analiz edilecek HTML içeriğini buraya yapıştırın..."
+
+msgid "&Analyze"
+msgstr "&Analiz Et"
+
+msgid "I&mprovements and Suggestions:"
+msgstr "İ&yileştirmeler ve Öneriler:"
+
+msgid "Enter HTML content and click 'Analyze' button."
+msgstr "HTML içeriğini girin ve 'Analiz Et' butonuna tıklayın."
+
+msgid "Ask &More:"
+msgstr "Daha Fazla &Sorun:"
+
+msgid "Ask additional questions about WCAG..."
+msgstr "WCAG hakkında ek soru sorun..."
+
+msgid "Ask follow-up question about WCAG..."
+msgstr "WCAG hakkında takip sorusu sor..."
+
+msgid "Cl&ose"
+msgstr "Ka&pat"
+
+msgid "Please enter HTML content first."
+msgstr "Lütfen önce HTML içeriği girin."
+
+msgid "Analysis in progress, please wait."
+msgstr "Analiz devam ediyor, lütfen bekleyin."
+
+msgid "Analyzing, please wait..."
+msgstr "Analiz yapılıyor, lütfen bekleyin..."
+
+msgid "Starting WCAG analysis..."
+msgstr "WCAG analizi başlıyor..."
+
+msgid "HTML entered by user"
+msgstr "Kullanıcı tarafından girilen HTML"
+
+msgid "Analysis complete."
+msgstr "Analiz tamamlandı."
+
+msgid "Please enter a question."
+msgstr "Lütfen bir soru girin."
+
+msgid "You must analyze first."
+msgstr "Önce bir analiz yapmalısınız."
+
+msgid "Operation in progress, please wait."
+msgstr "İşlem devam ediyor, lütfen bekleyin."
+
+msgid "Sending question..."
+msgstr "Soru gönderiliyor..."
+
+msgid "Response ready."
+msgstr "Yanıt hazır."
+
+# Settings Panel
+msgid "WCAG Reporter"
+msgstr "WCAG Reporter"
+
+msgid "Ollama &URL:"
+msgstr "Ollama &URL:"
+
+msgid "&Model:"
+msgstr "&Model:"
+
+msgid "&Refresh Models"
+msgstr "&Modelleri Yenile"
+
+msgid "WCAG &Version:"
+msgstr "WCAG &Sürümü:"
+
+msgid "&Level:"
+msgstr "&Seviye:"
+
+msgid "Turkish"
+msgstr "Türkçe"
+
+msgid "English"
+msgstr "İngilizce"
+
+msgid "&Language:"
+msgstr "&Dil:"
+
+msgid "&Timeout (sec):"
+msgstr "&Zaman Aşımı (sn):"
+
+msgid "(No model found)"
+msgstr "(Model bulunamadı)"
+
+msgid "Model list refreshed."
+msgstr "Model listesi yenilendi."
+
+# Menu Items - Submenu structure
+msgid "WCAG Analyst"
+msgstr "WCAG Analizcisi"
+
+msgid "&HTML Analyst"
+msgstr "&HTML Analizcisi"
+
+msgid "Analyze HTML content for WCAG"
+msgstr "HTML içeriğini WCAG için analiz et"
+
+msgid "&Element Analysis (NVDA+Shift+W)"
+msgstr "&Element Analizi (NVDA+Shift+W)"
+
+msgid "Analyze focused element for WCAG"
+msgstr "Odaktaki elementi WCAG için analiz et"
+
+msgid "&Settings"
+msgstr "&Ayarlar"
+
+msgid "Open WCAG Analyst settings"
+msgstr "WCAG Analizcisi ayarlarını aç"
+
+msgid "&Documentation"
+msgstr "&Dokümantasyon"
+
+msgid "View documentation"
+msgstr "Dokümantasyonu görüntüle"
+
+msgid "Documentation file not found."
+msgstr "Dokümantasyon dosyası bulunamadı."
+
+msgid "Error opening documentation: {error}"
+msgstr "Dokümantasyon açılırken hata: {error}"
+
+# Analysis Messages
+msgid "No element is currently focused."
+msgstr "Üzerinde bulunulan element yok."
+
+msgid "Could not extract element information."
+msgstr "Element bilgisi alınamadı."
+
+msgid "Starting WCAG analysis... 0 percent"
+msgstr "WCAG analizi başlıyor... Yüzde 0"
+
+msgid "Extracting element info... 10 percent"
+msgstr "Element bilgisi çıkarılıyor... Yüzde 10"
+
+msgid "Connecting to Ollama server... 30 percent"
+msgstr "Ollama sunucusuna bağlanılıyor... Yüzde 30"
+
+msgid "Processing response... 90 percent"
+msgstr "Yanıt işleniyor... Yüzde 90"
+
+# HTML Extraction
+msgid "<!-- Element Info -->"
+msgstr "<!-- Element Bilgisi -->"
+
+msgid "<!-- Role: {role} -->"
+msgstr "<!-- Rol: {role} -->"
+
+msgid "<!-- States: {states} -->"
+msgstr "<!-- Durumlar: {states} -->"
+
+msgid "<!-- Child element count: {count} -->"
+msgstr "<!-- Alt element sayısı: {count} -->"
+
+msgid "<element>Unknown element</element>"
+msgstr "<element>Bilinmeyen element</element>"
+
+# Context
+msgid "Role: {role}"
+msgstr "Rol: {role}"
+
+msgid "Web page (Browse Mode)"
+msgstr "Web sayfası (Browse Mode)"
+
+msgid "Parent element: {name}"
+msgstr "Üst element: {name}"
+
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+# Error Dialog
+msgid "WCAG Reporter Error"
+msgstr "WCAG Reporter Hatası"
+
+msgid "An error occurred during analysis:\n\n{error}"
+msgstr "WCAG analizi sırasında hata oluştu:\n\n{error}"
